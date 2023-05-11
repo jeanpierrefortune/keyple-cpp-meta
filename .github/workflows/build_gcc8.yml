@@ -17,15 +17,11 @@ jobs:
       - name: Set up CMake
         uses: lukka/get-cmake@latest
 
-      - name: Install GCC and G++
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y gcc-8 g++-8
-
-      - name: Set compiler paths
-        run: |
-          export CC=/usr/bin/gcc-8
-          export CXX=/usr/bin/g++-8
+      - name: Set up GCC
+        uses: egor-tensin/setup-gcc@v1
+        with:
+          version: 8
+          platform: x64
 
       - name: Build project
         run: |
