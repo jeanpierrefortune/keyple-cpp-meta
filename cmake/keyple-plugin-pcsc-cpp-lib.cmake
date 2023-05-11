@@ -27,7 +27,7 @@ SET(EP_VERSION "2.1.0.1")
 FetchContent_Populate (
 	${EP_KEYPLE_PLUGIN_PCSC}
 
-	GIT_REPOSITORY git@github.com:eclipse/${EP_KEYPLE_PLUGIN_PCSC}.git
+	GIT_REPOSITORY https://github.com/eclipse//${EP_KEYPLE_PLUGIN_PCSC}.git
 	GIT_TAG        ${EP_VERSION}
 	GIT_SHALLOW    ON
 	SOURCE_DIR     ../externals/${EP_KEYPLE_PLUGIN_PCSC}

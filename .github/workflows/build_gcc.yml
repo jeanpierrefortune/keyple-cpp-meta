@@ -1,4 +1,4 @@
-name: Build Project using GCC8
+name: Build Project using GCC
 
 on:
   workflow_dispatch: # To authorize manual run
@@ -16,9 +16,6 @@ jobs:
 
       - name: Set up CMake
         uses: lukka/get-cmake@latest
-
-      - name: Clone
-        run: git clone git@github.com:calypsonet/calypsonet-terminal-calypso-cpp-api.git
 
       - name: Build project
         run: |

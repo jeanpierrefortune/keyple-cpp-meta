@@ -27,7 +27,7 @@ SET(EP_VERSION "2022-11-17")
 FetchContent_Populate (
 	${EP_KEYPLE_EXAMPLE}
 
-	GIT_REPOSITORY git@github.com:eclipse/${EP_KEYPLE_EXAMPLE}.git
+	GIT_REPOSITORY https://github.com/eclipse//${EP_KEYPLE_EXAMPLE}.git
 	GIT_TAG        ${EP_VERSION}
 	GIT_SHALLOW    ON
 	SOURCE_DIR     ../externals/${EP_KEYPLE_EXAMPLE}
