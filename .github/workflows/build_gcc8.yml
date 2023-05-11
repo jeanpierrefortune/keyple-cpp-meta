@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
@@ -17,15 +17,9 @@ jobs:
       - name: Set up CMake
         uses: lukka/get-cmake@latest
 
-      - name: Set up GCC
-        uses: egor-tensin/setup-gcc@v1
-        with:
-          version: 8
-          platform: x64
-
       - name: Build project
         run: |
           mkdir build
           cd build
-          cmake -DCMAKE_TOOLCHAIN_FILE=../toolchain/gcc-8-linux.cmake ..
+          cmake -DCMAKE_TOOLCHAIN_FILE=../toolchain/clang-linux.cmake ..
           make
