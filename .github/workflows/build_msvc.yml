@@ -33,5 +33,5 @@ jobs:
         run: |
           mkdir build
           cd build
-          cmake -DCMAKE_TOOLCHAIN_FILE=../toolchain/clang-windows.cmake ..
+          cmake -DCMAKE_TOOLCHAIN_FILE=D:/a/keyple-cpp-meta/keyple-cpp-meta/toolchain/clang-windows.cmake ..
           make
