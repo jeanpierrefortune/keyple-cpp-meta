@@ -1,0 +1,25 @@
+name: Build Project using MacOS
+
+on:
+  workflow_dispatch: # To authorize manual run
+  push:
+    branches:
+      - main  # Adjust the branch name as needed
+
+jobs:
+  build:
+    runs-on: macOS-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Xcode
+        uses: actions/setup-xcode@v2
+
+      - name: Build project
+        run: |
+          mkdir build
+          cd build
+          cmake ..
+          make

@@ -1,3 +1,6 @@
+[![Build Project using MS Visual Studio](https://github.com/jeanpierrefortune/keyple-cpp-meta/actions/workflows/build_msvc.yml/badge.svg)](https://github.com/jeanpierrefortune/keyple-cpp-meta/actions/workflows/build_msvc.yml)
+[![Build Project using GCC](https://github.com/jeanpierrefortune/keyple-cpp-meta/actions/workflows/build_gcc.yml/badge.svg)](https://github.com/jeanpierrefortune/keyple-cpp-meta/actions/workflows/build_gcc.yml)
+
 ## Building the Keyple components
 
 ### C++ components
