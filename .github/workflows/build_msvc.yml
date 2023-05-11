@@ -28,8 +28,9 @@ jobs:
           bootstrap-vcpkg.bat
           vcpkg integrate install
 
-      - name: Determine toolchain directory
-        id: toolchain
-        run: |
-          vcpkg install openssl --dry-run
-          echo "::set-output name=toolchain::$(vcpkg print-toolchain-dir)"
+      - name: Get vcpkg toolchain directory
+        id: vcpkg
+        run: echo "TOOLCHAIN=$(vcpkg print-toolchain-dir)" >> $GITHUB_ENV
+
+      - name: Echo the value of TOOLCHAIN
+        run: echo ${{ env.TOOLCHAIN }}
