@@ -1,4 +1,4 @@
-name: Build C++ project with Visual Studio
+name: Build Project using MS Visual Studio
 
 on:
   workflow_dispatch: # To authorize manual run
@@ -18,8 +18,6 @@ jobs:
 
       - name: Set up CMake
         uses: lukka/get-cmake@latest
-        with:
-          cmakeVersion: '3.26.3'  # Specify the desired CMake version
 
       - name: Create .ssh directory
         run: |
