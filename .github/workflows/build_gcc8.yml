@@ -1,0 +1,25 @@
+name: Build Project using GCC8
+
+on:
+  workflow_dispatch: # To authorize manual run
+  push:
+    branches:
+      - main  # Adjust the branch name as needed
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up CMake
+        uses: cmake/setup-cmake@v1
+
+      - name: Build project
+        run: |
+          mkdir build
+          cd build
+          cmake -DCMAKE_TOOLCHAIN_FILE=../toolchain/gcc-8-linux.cmake ..
+          make
