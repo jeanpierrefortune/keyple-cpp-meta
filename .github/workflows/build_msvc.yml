@@ -21,6 +21,10 @@ jobs:
         with:
           cmakeVersion: '3.26.3'  # Specify the desired CMake version
 
+      - name: Clearing SSH
+        run: ssh-keygen -R github.com
+
+
       - name: Install vcpkg
         run: |
           git clone https://github.com/microsoft/vcpkg.git
