@@ -41,4 +41,4 @@ jobs:
           mkdir build
           cd build
           cmake -DCMAKE_TOOLCHAIN_FILE=D:/a/keyple-cpp-meta/keyple-cpp-meta/toolchain/clang-windows.cmake ..
-          make
+          nmake
