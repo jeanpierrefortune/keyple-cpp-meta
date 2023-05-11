@@ -17,6 +17,9 @@ jobs:
       - name: Set up CMake
         uses: lukka/get-cmake@latest
 
+      - name: Clone
+        run: git clone https://github.com/calypsonet/calypsonet-terminal-calypso-cpp-api.git
+
       - name: Build project
         run: |
           mkdir build
