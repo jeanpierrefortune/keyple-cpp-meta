@@ -31,5 +31,5 @@ jobs:
       - name: Determine toolchain directory
         id: toolchain
         run: |
-          vcpkg install <package_name> --dry-run
+          vcpkg install openssl --dry-run
           echo "::set-output name=toolchain::$(vcpkg print-toolchain-dir)"
