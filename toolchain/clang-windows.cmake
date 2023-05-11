@@ -3,7 +3,7 @@ SET(CMAKE_SYSTEM_NAME Windows)
 SET(TOOLCHAIN_FILE "clang-windows.cmake")
 
 # Path
-SET(CLANG_TOOLCHAIN_DIR "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.34.31933")
+SET(CLANG_TOOLCHAIN_DIR "C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.34.31933")
 SET(CLANG_COMPILER_DIR  ${CLANG_TOOLCHAIN_DIR}/bin/Hostx64/x64)
 SET(CLANG_SYSROOT_DIR   ${CLANG_TOOLCHAIN_DIR})
 SET(CLANG_INCLUDE_DIR   ${CLANG_TOOLCHAIN_DIR}/include)
