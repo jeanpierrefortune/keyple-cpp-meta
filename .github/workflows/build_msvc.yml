@@ -27,10 +27,11 @@ jobs:
           cd vcpkg
           bootstrap-vcpkg.bat
           vcpkg integrate install
+          cd ..
 
-      - name: Get vcpkg toolchain directory
-        id: vcpkg
-        run: echo "TOOLCHAIN=$(vcpkg print-toolchain-dir)" >> $GITHUB_ENV
-
-      - name: Echo the value of TOOLCHAIN
-        run: echo ${{ env.TOOLCHAIN }}
+      - name: Build
+        run: |
+          mkdir build
+          cd build
+          cmake -DCMAKE_TOOLCHAIN_FILE=D:/a/keyple-cpp-meta/keyple-cpp-meta/vcpkg/scripts/buildsystems/vcpkg.cmake ..
+          make
