@@ -26,14 +26,12 @@ jobs:
           git clone https://github.com/microsoft/vcpkg.git
           cd vcpkg
           bootstrap-vcpkg.bat
-          $OUTPUT = ./vcpkg integrate install
-          $TOOLCHAIN_PATH = ($OUTPUT | Select-String -Pattern 'CMAKE_TOOLCHAIN_FILE=(.*)').Matches.Groups[1].Value
-          echo "::set-output name=toolchain_path::$TOOLCHAIN_PATH"
+          vcpkg integrate install
           cd ..
 
       - name: Build
         run: |
           mkdir build
           cd build
-          cmake -DTOOLCHAIN_FILE="vcpkg.cmake" -DCMAKE_TOOLCHAIN_FILE=${{ steps.vcpkg.outputs.toolchain_path }} ..
+          cmake -DTOOLCHAIN_FILE="vcpkg.cmake" -DCMAKE_TOOLCHAIN_FILE=../vcpkg/scripts/buildsystems/vcpkg.cmake ..
           MSBuild.exe Project.sln
