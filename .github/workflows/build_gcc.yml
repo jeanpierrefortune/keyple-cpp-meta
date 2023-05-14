@@ -1,4 +1,4 @@
-name: Build Project using GCC
+name: Linux Build using GCC
 
 on:
   workflow_dispatch: # To authorize manual run

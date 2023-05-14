@@ -1,4 +1,4 @@
-name: Build on Windows using MS Visual Studio
+name: Windows Build using MS Visual Studio
 
 on:
   workflow_dispatch: # To authorize manual run
