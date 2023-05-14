@@ -18,7 +18,7 @@ jobs:
         run: brew install pcsc-lite
 
       - name: Check
-        run: ls /usr/include/PCSC/
+        run: find / -name winscard.h
 
       - name: Build project
         run: |
