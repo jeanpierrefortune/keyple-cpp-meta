@@ -19,14 +19,15 @@ jobs:
       - name: Set up CMake
         uses: lukka/get-cmake@latest
 
-      - name: Install vcpkg
+      - name: Set up vcpkg
+        id: vcpkg
+        shell: pwsh
         run: |
           git clone https://github.com/microsoft/vcpkg.git
           cd vcpkg
           bootstrap-vcpkg.bat
-          vcpkg integrate install
-          OUTPUT=$(./vcpkg integrate install)
-          TOOLCHAIN_PATH=$(echo "$OUTPUT" | grep -oP 'CMAKE_TOOLCHAIN_FILE=\K.*')
+          $OUTPUT = ./vcpkg integrate install
+          $TOOLCHAIN_PATH = ($OUTPUT | Select-String -Pattern 'CMAKE_TOOLCHAIN_FILE=(.*)').Matches.Groups[1].Value
           echo "::set-output name=toolchain_path::$TOOLCHAIN_PATH"
           cd ..
 
@@ -35,4 +36,4 @@ jobs:
           mkdir build
           cd build
           cmake -DTOOLCHAIN_FILE="vcpkg.cmake" -DCMAKE_TOOLCHAIN_FILE=${{ steps.vcpkg.outputs.toolchain_path }} ..
-          make
+          MSBuild.exe Project.sln
