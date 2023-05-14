@@ -1,4 +1,4 @@
-name: Build Project using MS Visual Studio
+name: Build on Windows using MS Visual Studio
 
 on:
   workflow_dispatch: # To authorize manual run
@@ -31,5 +31,5 @@ jobs:
         run: |
           mkdir build
           cd build
-          cmake -DCMAKE_TOOLCHAIN_FILE=D:/a/keyple-cpp-meta/keyple-cpp-meta/toolchain/clang-windows.cmake ..
+          cmake -DTOOLCHAIN_FILE="vcpkg.cmake" -DCMAKE_TOOLCHAIN_FILE="C:/j/vcpkg/scripts/buildsystems/vcpkg.cmake" ..
           nmake

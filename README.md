@@ -1,6 +1,6 @@
-[![Build Project using MS Visual Studio](https://github.com/jeanpierrefortune/keyple-cpp-meta/actions/workflows/build_msvc.yml/badge.svg)](https://github.com/jeanpierrefortune/keyple-cpp-meta/actions/workflows/build_msvc.yml)
-[![Build Project using GCC](https://github.com/jeanpierrefortune/keyple-cpp-meta/actions/workflows/build_gcc.yml/badge.svg)](https://github.com/jeanpierrefortune/keyple-cpp-meta/actions/workflows/build_gcc.yml)
-[![Build Project using MacOS](https://github.com/jeanpierrefortune/keyple-cpp-meta/actions/workflows/build_macos.yml/badge.svg)](https://github.com/jeanpierrefortune/keyple-cpp-meta/actions/workflows/build_macos.yml)
+[![Windows Build (MS Visual Studio)](https://github.com/jeanpierrefortune/keyple-cpp-meta/actions/workflows/build_msvc.yml/badge.svg)](https://github.com/jeanpierrefortune/keyple-cpp-meta/actions/workflows/build_msvc.yml)
+[![Linux Build (gcc)](https://github.com/jeanpierrefortune/keyple-cpp-meta/actions/workflows/build_gcc.yml/badge.svg)](https://github.com/jeanpierrefortune/keyple-cpp-meta/actions/workflows/build_gcc.yml)
+[![macOS Build (clang)](https://github.com/jeanpierrefortune/keyple-cpp-meta/actions/workflows/build_macos.yml/badge.svg)](https://github.com/jeanpierrefortune/keyple-cpp-meta/actions/workflows/build_macos.yml)
 
 ## Building the Keyple components
 
