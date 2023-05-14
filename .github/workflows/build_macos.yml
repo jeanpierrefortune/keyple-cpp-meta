@@ -18,7 +18,7 @@ jobs:
         run: brew install pcsc-lite
 
       - name: Patch
-        run: cp -rf /usr//local/Cellar/pcsc-lite/1.9.9/include/PCSC /usr/include/
+        run: sudo cp -rf /usr//local/Cellar/pcsc-lite/1.9.9/include/PCSC /usr/include/
 
       - name: Build project
         run: |
