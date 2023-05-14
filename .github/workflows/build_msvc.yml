@@ -19,15 +19,6 @@ jobs:
       - name: Set up CMake
         uses: lukka/get-cmake@latest
 
-      - name: Create .ssh directory
-        run: |
-          mkdir "$env:USERPROFILE\.ssh"
-
-      - name: Remove host key for github.com
-        run: |
-          ssh-keyscan -t rsa github.com >> "$env:USERPROFILE\.ssh\known_hosts"
-          ssh-keygen -R github.com -f "$env:USERPROFILE\.ssh\known_hosts"
-
       - name: Install vcpkg
         run: |
           git clone https://github.com/microsoft/vcpkg.git
