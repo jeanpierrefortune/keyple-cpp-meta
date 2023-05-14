@@ -25,11 +25,14 @@ jobs:
           cd vcpkg
           bootstrap-vcpkg.bat
           vcpkg integrate install
+          OUTPUT=$(./vcpkg integrate install)
+          TOOLCHAIN_PATH=$(echo "$OUTPUT" | grep -oP 'CMAKE_TOOLCHAIN_FILE=\K.*')
+          echo "::set-output name=toolchain_path::$TOOLCHAIN_PATH"
           cd ..
 
       - name: Build
         run: |
           mkdir build
           cd build
-          cmake -DTOOLCHAIN_FILE="vcpkg.cmake" -DCMAKE_TOOLCHAIN_FILE="C:/j/vcpkg/scripts/buildsystems/vcpkg.cmake" ..
-          nmake
+          cmake -DTOOLCHAIN_FILE="vcpkg.cmake" -DCMAKE_TOOLCHAIN_FILE=${{ steps.vcpkg.outputs.toolchain_path }} ..
+          make
