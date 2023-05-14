@@ -14,9 +14,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Check for PCSC
-        run: |
-          pkgutil --pkg-info com.apple.pkg.SmartCardServices || echo "PCSC not installed"
+      - name: Set up PCSC lite
+        run: brew install pcsc-lite
 
       - name: Build project
         run: |
