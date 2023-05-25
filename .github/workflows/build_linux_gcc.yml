@@ -1,0 +1,30 @@
+name: Linux Build using GCC
+
+on:
+  workflow_dispatch: # To authorize manual run
+  push:
+    branches:
+      - main  # Adjust the branch name as needed
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up CMake
+        uses: lukka/get-cmake@latest
+
+      - name: prepare
+        run:  |
+          sudo apt-get update -y
+          sudo apt-get install -y libpcsclite-dev
+
+      - name: Build project
+        run: |
+          mkdir build
+          cd build
+          cmake -DCMAKE_TOOLCHAIN_FILE=../toolchain/gcc-linux.cmake ..
+          make
