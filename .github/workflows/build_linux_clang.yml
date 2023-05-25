@@ -1,4 +1,4 @@
-name: Linux Build using GCC
+name: Linux Build using Clang
 
 on:
   workflow_dispatch: # To authorize manual run
